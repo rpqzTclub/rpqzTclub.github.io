@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="机器学习 线性代数学习笔记 本篇是在学习过程中写的，可能会存在疏漏，欢迎补充！\n“人工智能是我们人类正在从事的最为深刻的研究方向之一，甚至要比火与电还更加深刻。”\n">
+<title>机器学习线性代数学习笔记</title>
+
+<link rel='canonical' href='http://localhost:1313/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
+
+<link rel="stylesheet" href="/scss/style.min.b8ae80d4a7be511e4570133a283724a867f8d3fe83eead0e0c3265ed778e21d2.css"><script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.db5a2b3b827d2c821ac49f720460967e438699e51c38fe3b4788b311a27bd033.js" defer></script><meta property='og:title' content="机器学习线性代数学习笔记">
+<meta property='og:description' content="机器学习 线性代数学习笔记 本篇是在学习过程中写的，可能会存在疏漏，欢迎补充！\n“人工智能是我们人类正在从事的最为深刻的研究方向之一，甚至要比火与电还更加深刻。”\n">
+<meta property='og:url' content='http://localhost:1313/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
+<meta property='og:site_name' content='量子科技社'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='深度学习' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='AI' /><meta property='article:tag' content='线性代数' /><meta property='article:published_time' content='2025-01-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-19T14:56:58&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/title.png' />
+<meta name="twitter:title" content="机器学习线性代数学习笔记">
+<meta name="twitter:description" content="机器学习 线性代数学习笔记 本篇是在学习过程中写的，可能会存在疏漏，欢迎补充！\n“人工智能是我们人类正在从事的最为深刻的研究方向之一，甚至要比火与电还更加深刻。”\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/title.png' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "dark");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu2299108466856657701.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😉</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">量子科技社</a></h1>
+            <h2 class="site-description">走向世界，面向未来</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/3493270162245710?spm_id_from=333.1007.0.0'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0-beta2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M488.6 104.1C505.3 122.2 513 143.8 511.9 169.8V372.2C511.5 398.6 502.7 420.3 485.4 437.3C468.2 454.3 446.3 463.2 419.9 464H92.02C65.57 463.2 43.81 454.2 26.74 436.8C9.682 419.4 .7667 396.5 0 368.2V169.8C.7667 143.8 9.682 122.2 26.74 104.1C43.81 87.75 65.57 78.77 92.02 78H121.4L96.05 52.19C90.3 46.46 87.42 39.19 87.42 30.4C87.42 21.6 90.3 14.34 96.05 8.603C101.8 2.868 109.1 0 117.9 0C126.7 0 134 2.868 139.8 8.603L213.1 78H301.1L375.6 8.603C381.7 2.868 389.2 0 398 0C406.8 0 414.1 2.868 419.9 8.603C425.6 14.34 428.5 21.6 428.5 30.4C428.5 39.19 425.6 46.46 419.9 52.19L394.6 78L423.9 78C450.3 78.77 471.9 87.75 488.6 104.1H488.6zM449.8 173.8C449.4 164.2 446.1 156.4 439.1 150.3C433.9 144.2 425.1 140.9 416.4 140.5H96.05C86.46 140.9 78.6 144.2 72.47 150.3C66.33 156.4 63.07 164.2 62.69 173.8V368.2C62.69 377.4 65.95 385.2 72.47 391.7C78.99 398.2 86.85 401.5 96.05 401.5H416.4C425.6 401.5 433.4 398.2 439.7 391.7C446 385.2 449.4 377.4 449.8 368.2L449.8 173.8zM185.5 216.5C191.8 222.8 195.2 230.6 195.6 239.7V273C195.2 282.2 191.9 289.9 185.8 296.2C179.6 302.5 171.8 305.7 162.2 305.7C152.6 305.7 144.7 302.5 138.6 296.2C132.5 289.9 129.2 282.2 128.8 273V239.7C129.2 230.6 132.6 222.8 138.9 216.5C145.2 210.2 152.1 206.9 162.2 206.5C171.4 206.9 179.2 210.2 185.5 216.5H185.5zM377 216.5C383.3 222.8 386.7 230.6 387.1 239.7V273C386.7 282.2 383.4 289.9 377.3 296.2C371.2 302.5 363.3 305.7 353.7 305.7C344.1 305.7 336.3 302.5 330.1 296.2C323.1 289.9 320.7 282.2 320.4 273V239.7C320.7 230.6 324.1 222.8 330.4 216.5C336.7 210.2 344.5 206.9 353.7 206.5C362.9 206.9 370.7 210.2 377 216.5H377z"/></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/SJTdreams/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于作者</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>相关链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-数学基础在ai研究中的必要性">1.1 数学基础在AI研究中的必要性</a></li>
+    <li><a href="#12-深度学习可能涉及到的数学内容">1.2 深度学习可能涉及到的数学内容</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#21-矩阵的定义与应用">2.1 矩阵的定义与应用</a></li>
+    <li><a href="#22-单位矩阵与逆矩阵">2.2 单位矩阵与逆矩阵</a></li>
+    <li><a href="#23-向量的基本性质">2.3 向量的基本性质</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#31-奇异性与非奇异性">3.1 奇异性与非奇异性</a></li>
+    <li><a href="#32-秩的概念及其重要性">3.2 秩的概念及其重要性</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#41-行阶梯形式的特点">4.1 行阶梯形式的特点</a></li>
+    <li><a href="#42-高斯消元法的应用">4.2 高斯消元法的应用</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#51-向量运算">5.1 向量运算</a></li>
+    <li><a href="#52-矩阵运算">5.2 矩阵运算</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#61-线性变换的定义">6.1 线性变换的定义</a></li>
+    <li><a href="#62-线性变换与基向量">6.2 线性变换与基向量</a></li>
+    <li><a href="#63-离散动力系统">6.3 离散动力系统</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#71-张成的概念与基的概念">7.1 张成的概念与基的概念</a></li>
+    <li><a href="#72-基的特点">7.2 基的特点</a></li>
+    <li><a href="#73-特征基">7.3 特征基</a>
+      <ol>
+        <li><a href="#特征向量具体的计算过程及原理">特征向量具体的计算过程及原理：</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#81-pca的作用">8.1 PCA的作用</a></li>
+    <li><a href="#82-pca的使用">8.2 PCA的使用</a></li>
+    <li><a href="#83-pca的局限性">8.3 PCA的局限性</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#71-线性代数的核心作用">7.1 线性代数的核心作用</a></li>
+    <li><a href="#72-线性代数的实际应用">7.2 线性代数的实际应用</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <img src="/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/title_hu6115248048760427444.png"
+                        srcset="/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/title_hu6115248048760427444.png 800w, /p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/title_hu7930227287092271234.png 1600w"
+                        width="800" 
+                        height="633" 
+                        loading="lazy"
+                        alt="Featured image of post 机器学习线性代数学习笔记" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="background-color: #2a9d8f; color: #fff;">
+                深度学习
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">机器学习线性代数学习笔记</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 01, 2025</time>
+            </div>
+        
+
+
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 18 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="机器学习-线性代数学习笔记">机器学习 线性代数学习笔记
+</h1><blockquote>
+<p><strong>本篇是在学习过程中写的，可能会存在疏漏，欢迎补充！</strong></p>
+</blockquote>
+<blockquote>
+<p>“人工智能是我们人类正在从事的最为深刻的研究方向之一，甚至要比火与电还更加深刻。”</p>
+<p>​											——桑德尔·皮猜（Sundar Pichai）, 2020</p>
+</blockquote>
+<p>[TOC]</p>
+<blockquote>
+<p>本人观看地址：https://www.bilibili.com/video/BV1Pg4y1X7Pa/?spm_id_from=333.337.search-card.all.click</p>
+</blockquote>
+<h1 id="1-数学基础在ai学习中的作用">1. 数学基础在AI学习中的作用
+</h1><h2 id="11-数学基础在ai研究中的必要性">1.1 数学基础在AI研究中的必要性
+</h2><ul>
+<li>
+<p><strong>理论支撑</strong>：存在大量的AI模型理论都依靠大量的数学基础。深度学习的原理上涉及到了大量的线性代数运算，如点积、矩阵乘法等。而微积分也在各种损失函数、计算梯度上运用广泛。例如训练神经网络的核心算法：反向传播，就涉及到了大量的微积分知识。大名鼎鼎的框架TensorFlow，直译就是“张量流动”。</p>
+</li>
+<li>
+<p><strong>模型优化</strong>：在AI模型的训练过程中，优化算法如梯度下降法需要用到微积分的知识。数学能够帮助我们分析和选择最佳的学习率，从而加速模型的收敛，提高模型性能。</p>
+</li>
+<li>
+<p><strong>数据分析</strong>：AI领域中的数据预处理、特征提取等步骤都涉及到统计学和概率论。这些数学工具帮助我们从数据中提取有价值的信息，为模型训练提供支持。例如，可用通过统计学识别异常值，处理缺失值等。而将数据标准化和归一化也涉及到数学。</p>
+</li>
+<li>
+<p><strong>算法创新</strong>：数学是推动AI算法创新的关键。许多新的AI算法，如卷积神经网络（CNN）和循环神经网络（RNN），都是基于数学理论的创新。CNN运用了数学上的互相关运算，而RNN的时间序列也是矩阵表示的，RNN的预测还涉及到了马尔科夫链(概率论)。</p>
+</li>
+</ul>
+<h2 id="12-深度学习可能涉及到的数学内容">1.2 深度学习可能涉及到的数学内容
+</h2><ul>
+<li>
+<p><strong>线性代数</strong>：在线性代数中，矩阵和向量运算是构建和理解神经网络的基础。矩阵的乘法、转置、逆等操作在神经网络的前向传播和反向传播中扮演着核心角色。线性代数极大程度的简化了模型的表示。</p>
+</li>
+<li>
+<p><strong>概率论与数理统计</strong>：评估、选择模型，数据处理，决策优化等。</p>
+</li>
+<li>
+<p><strong>微积分</strong>：涉及到梯度下降，反向传播与正向传播，处理损失函数，进行正则化，卷积操作，一些其他的优化算法（如牛顿法、拟牛顿法等）等。</p>
+</li>
+<li>
+<p><strong>信息论</strong>：评估特征信息量，量化模型复杂度，数据压缩等。其中的交叉熵损失函数广泛运用于分类、目标检测和NLP（自然语言处理）。</p>
+</li>
+<li>
+<blockquote>
+<p>与均方误差（MSE）相比，交叉熵损失函数在处理分类问题时通常更具优势，因为它直接衡量模型对于类别分布的拟合程度，而MSE则通过最小化预测值与真实值之间的平方差来评估模型性能，这在分类问题中可能不够直观</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="2-线性代数的核心概念">2. 线性代数的核心概念
+</h1><h2 id="21-矩阵的定义与应用">2.1 矩阵的定义与应用
+</h2><p>矩阵是线性代数中的一个基本概念，由数排成的矩形阵列，常用于线性方程组的系数表示、线性变换等。矩阵可以在某种程度上视为一个用于存放方程系数的二维系统，并且可以通过保持奇异性的行操作化简成行阶梯形。矩阵的广泛应用是线性代数中的核心，以下是矩阵的一些关键应用：</p>
+<ul>
+<li>
+<p><strong>线性方程组</strong>：矩阵可以用来表示线性方程组，通过矩阵运算可以求解方程组的解（例如可以通过高斯消元法求解），这对于理解和设计AI算法中的优化问题至关重要。</p>
+</li>
+<li>
+<p><strong>数据表示</strong>：在机器学习中，数据通常以矩阵的形式表示，其中每一行代表一个样本，每一列代表一个特征。这种表示方法便于算法处理和分析。</p>
+</li>
+<li>
+<p><strong>变换</strong>：矩阵可以表示线性变换，如图像处理中的旋转、缩放等操作，这些都是计算机视觉中的基础操作。</p>
+</li>
+<li>
+<p><strong>神经网络</strong>：在深度学习中，神经网络的权重和输入数据都以矩阵的形式存在，矩阵乘法是前向传播和反向传播中的基本操作。</p>
+</li>
+</ul>
+<h2 id="22-单位矩阵与逆矩阵">2.2 单位矩阵与逆矩阵
+</h2><p>单位矩阵和逆矩阵是矩阵理论中的重要概念，它们在解决线性方程组和线性变换中扮演着关键角色。</p>
+<ul>
+<li>
+<p><strong>单位矩阵</strong>：单位矩阵是一个方阵，其主对角线上的元素都是1，其余元素都是0。单位矩阵与任何向量执行点积，其结果等于该向量。对单位矩阵做线性变换得到的基向量不变，这是因为单位矩阵代表了线性变换中的“无操作”。</p>
+</li>
+<li>
+<p><strong>逆矩阵</strong>：逆矩阵与原矩阵的乘积等于单位矩阵。逆矩阵可以通过解方程计算得到。非奇异的矩阵总是有逆的（可逆矩阵），而奇异的矩阵总是无逆的。奇异的方程的行列式必然为0，这就像是数字0没有逆元一样。互为逆矩阵的矩阵的行列式互为倒数。刚好1/0是未定义的，奇异的矩阵无逆矩阵。</p>
+<ul>
+<li>$$
+    det({A}^{-1})=\frac {1} {det(A)}
+    $$</li>
+</ul>
+</li>
+</ul>
+<h2 id="23-向量的基本性质">2.3 向量的基本性质
+</h2><p>向量是线性代数中的另一个核心概念，核心要素包括方向和大小，可以视为指向某个坐标的箭头。</p>
+<ul>
+<li>
+<p><strong>范数</strong>：向量的范数是衡量向量“长度”的一种方式。默认的L2范数是向量内所有数平方和的平方根，而曼哈顿距离（L1范数）是向量内所有数的绝对值之和。这些范数在不同的应用场景中有着不同的用途，如在优化问题中，选择合适的范数可以帮助我们得到不同的优化结果。</p>
+</li>
+<li>
+<p><strong>正交性</strong>：当两个向量是正交的时，这两个向量的点积为0。这个性质在机器学习中的特征选择和降维中非常重要，因为它可以帮助我们识别和消除特征之间的相关性。</p>
+</li>
+<li>
+<p><strong>投影</strong>：两个向量成角度的向量的点积，等同于其中一个向量对另一个向量做投影得到的向量与另一个向量的点积。这说明可以用投影的正负确定点积的正负，一定程度上可以理解为，点积值为正的两个向量夹角必然小于90度。</p>
+</li>
+</ul>
+<h1 id="3-线性代数的深入理解">3. 线性代数的深入理解
+</h1><h2 id="31-奇异性与非奇异性">3.1 奇异性与非奇异性
+</h2><ul>
+<li>
+<p><strong>奇异性定义</strong>：简单而言，一个不具备冗余和矛盾信息的句子系统或方程组是非奇异的。非奇异方程组在一般情况下通常可解，而奇异方程在一般情况下通常不可解。这可以通过行列式法或秩判定法来判断。行列式法涉及将矩阵按照两个方向划分为数条对角线，若各自乘积之和相等则是奇异的。秩判定法则是看方阵的秩是否小于其阶数，若是，则矩阵是奇异的。</p>
+</li>
+<li>
+<p><strong>数据科学中的应用</strong>：在数据科学中，奇异性与非奇异性的概念对于理解数据集的线性独立性非常重要。一个非奇异的数据矩阵意味着数据集中没有冗余的特征，这有助于避免在机器学习模型中出现过拟合现象。</p>
+</li>
+<li>
+<p><strong>数值计算中的影响</strong>：在数值计算中，奇异矩阵可能导致算法的不稳定和数值误差的放大。例如，在求解线性方程组或者进行矩阵求逆时，奇异矩阵可能会导致算法失败或者结果不准确。</p>
+</li>
+</ul>
+<h2 id="32-秩的概念及其重要性">3.2 秩的概念及其重要性
+</h2><ul>
+<li>
+<p>秩是矩阵的一个基本属性，它描述了矩阵中线性无关的行或列的最大数量，反映了矩阵所包含的“有效”信息的多少。</p>
+</li>
+<li>
+<p><strong>秩的定义</strong>：矩阵的秩是矩阵中线性无关的行（或列）向量的最大个数。它决定了线性方程组中独立方程的个数，进而影响方程组解的情况。秩的概念在信息论中也非常重要，因为它可以衡量矩阵信息量。</p>
+</li>
+<li>
+<p><strong>秩与数据压缩</strong>：在数据压缩和降维领域，秩的概念被用来识别最重要的特征。通过降低数据矩阵的秩，我们可以去除不重要的噪声和冗余信息，从而实现数据的有效压缩。</p>
+</li>
+<li>
+<p><strong>秩与机器学习</strong>：在机器学习中，秩的概念可以帮助我们理解模型的复杂度。例如，在主成分分析（PCA）中，我们通过选择前几个主成分来降低数据的维度，这些主成分的数目通常与数据矩阵的秩有关。</p>
+</li>
+<li>
+<p><strong>秩与线性方程组</strong>：在线性方程组中，系数矩阵的秩决定了方程组解的性质。如果系数矩阵的秩等于增广矩阵的秩且小于变量的数目，则方程组有无穷多解；如果秩等于变量的数目，则方程组有唯一解；如果秩小于变量的数目，则方程组无解。</p>
+</li>
+</ul>
+<h1 id="4-行阶梯形式与高斯消元法">4. 行阶梯形式与高斯消元法
+</h1><h2 id="41-行阶梯形式的特点">4.1 行阶梯形式的特点
+</h2><p>行阶梯形式是线性代数中对矩阵进行化简的一种重要形式，它通过保持奇异性的行操作对矩阵进行化简。以下是行阶梯形式的一些关键特点：</p>
+<ul>
+<li>
+<p><strong>主元位置</strong>：每一行最左边的非0数被称为主元，主元数等于秩的值。每一行的主元必然位于上一行的右方，这保证了矩阵的上三角结构。</p>
+</li>
+<li>
+<p><strong>全零行</strong>：矩阵的全零行只能出现在矩阵的下部，且如果出现了全零行，该矩阵是奇异的。这一点是判断矩阵是否奇异的重要依据。</p>
+</li>
+<li>
+<p><strong>化简过程</strong>：通过将每个主元所在列的其他数字化为0得到的矩阵被称为简化行梯形式。这个过程有助于进一步简化矩阵，使其更易于处理。</p>
+</li>
+<li>
+<p><strong>非奇异性判定</strong>：当且仅当主元的数等于阶数的矩阵是非奇异的。这意味着，如果一个矩阵在其行阶梯形式中每一行和每一列都有一个主元，则该矩阵是非奇异的，反之则为奇异。</p>
+</li>
+<li>
+<p><strong>对角线特性</strong>：在行阶梯形式中，主对角线以下的所有元素都是0，这使得矩阵的结构更加清晰，便于进行后续的计算和分析。</p>
+</li>
+</ul>
+<h2 id="42-高斯消元法的应用">4.2 高斯消元法的应用
+</h2><p>高斯消元法是一种用于求解线性方程组的算法，它通过行操作将增广矩阵转换为行阶梯形式或简化行阶梯形式，从而得出方程组的解。以下是高斯消元法的一些关键应用：</p>
+<ul>
+<li>
+<p><strong>方程求解</strong>：高斯消元法可以将线性方程组的系数矩阵和常数项矩阵合并为一个增广矩阵，然后通过行操作将其转换为行阶梯形式，从而求解方程组。</p>
+</li>
+<li>
+<p><strong>算法效率</strong>：高斯消元法在数值计算中非常高效，尤其是对于大规模的线性方程组。它的效率在于能够逐步消去变量，减少计算量。</p>
+</li>
+<li>
+<p><strong>数值稳定性</strong>：高斯消元法在执行过程中可以通过部分选主元等策略来提高数值稳定性，减少计算过程中的舍入误差。</p>
+</li>
+<li>
+<p><strong>矩阵求逆</strong>：高斯消元法也可以用来求解矩阵的逆。通过将单位矩阵与原矩阵增广，然后执行高斯消元，可以得到原矩阵的逆矩阵。</p>
+</li>
+<li>
+<p><strong>线性代数的基础</strong>：高斯消元法是理解线性代数中许多其他概念和算法的基础，如矩阵分解、LU分解等。</p>
+</li>
+<li>
+<p><strong>在AI中的应用</strong>：在AI领域，高斯消元法可以用于求解优化问题中的线性方程组，如在支持向量机（SVM）的训练过程中求解拉格朗日乘子。</p>
+</li>
+</ul>
+<p>通过对行阶梯形式和高斯消元法的深入理解，我们可以更好地掌握线性代数在解决实际问题中的应用，尤其是在AI领域的算法实现和数据分析中。</p>
+<h1 id="5-线性代数中的运算">5. 线性代数中的运算
+</h1><h2 id="51-向量运算">5.1 向量运算
+</h2><p>向量运算是线性代数中的基础，它们在AI领域的数据处理和特征工程中扮演着重要角色。以下是向量运算的一些关键点：</p>
+<ul>
+<li>
+<p><strong>向量-向量加法</strong>：向量加法可以通过平行四边形法则来理解，其结果向量的坐标是两个向量对应坐标的和。在实际计算中，向量加法是按元素相加的。</p>
+</li>
+<li>
+<p><strong>向量-向量减法</strong>：向量减法可以视为求两个向量差的运算，结果向量的坐标是两个向量对应坐标的差。在实际计算中，向量减法是按元素相减的。</p>
+</li>
+<li>
+<p><strong>向量-标量乘法</strong>：向量与标量的乘法是将向量的每个元素乘以该标量，结果向量的每个元素都是原向量对应元素与标量的乘积。</p>
+</li>
+<li>
+<p><strong>向量-向量乘法（点积）</strong>：两个向量的点积是对应元素乘积的和。点积的结果是一个标量，它具有几何意义，如计算两个向量之间的夹角和相似度。在AI中，点积常用于特征归一化和相似性度量。</p>
+</li>
+<li>
+<p><strong>转置</strong>：向量的转置是将行向量转换为列向量，或将列向量转换为行向量。在矩阵运算中，转置操作常用于改变数据的布局以适应特定的计算需求。</p>
+</li>
+</ul>
+<h2 id="52-矩阵运算">5.2 矩阵运算
+</h2><p>矩阵运算是线性代数中的核心，它们在AI算法的实现中至关重要。以下是矩阵运算的一些关键点：</p>
+<ul>
+<li>
+<p><strong>矩阵-向量乘法</strong>：矩阵与向量的乘法是将矩阵的每一行与向量进行点积操作，结果是一个向量。在神经网络中，这种运算用于实现前向传播和反向传播。</p>
+</li>
+<li>
+<p><strong>转置</strong>：矩阵的转置是将矩阵的行和列互换，即原矩阵的第i行第j列元素变成转置矩阵的第j行第i列元素。转置操作在AI中用于调整数据维度，如在图像处理和特征变换中。</p>
+</li>
+<li>
+<p><strong>矩阵-矩阵乘法</strong>：矩阵乘法是通过第一个矩阵的每一行与第二个矩阵的每一列的点积来计算的。矩阵乘法在AI中用于实现复杂的变换，如卷积神经网络中的卷积操作。</p>
+<ul>
+<li>
+<p>矩阵-矩阵乘法有一个<u>特性</u>：两个矩阵相乘再计算行列式的值会等于这两个矩阵的行列式的积。</p>
+</li>
+<li>
+$$
+    det(AB)=det(A)⋅det(B)
+    $$</li>
+<li>
+<p>而因为奇异矩阵的行列式为0，因此<u><strong>任何</strong></u>矩阵与奇异矩阵相乘都会等于0。这一点也可以说明为什么奇异的矩阵没有逆元，因为单位矩阵是非奇异的。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>线性变换</strong>：矩阵可以表示线性变换，这种变换将平面上的点映射到另一个点。在AI中，线性变换用于特征提取和数据降维，如主成分分析（PCA）。</p>
+</li>
+</ul>
+<p>通过对线性代数中的向量和矩阵运算的深入理解，我们可以更好地掌握这些运算在AI领域的应用，从而在算法设计和数据分析中做出更合理的决策。</p>
+<h1 id="6-线性变换及其应用">6. 线性变换及其应用
+</h1><h2 id="61-线性变换的定义">6.1 线性变换的定义
+</h2><p>线性变换是线性代数中的一个重要概念，它描述了一种特殊的函数，这种函数将向量空间中的元素映射到同一空间或另一个向量空间中的元素，同时保持向量加法和标量乘法的操作不变。具体来说，如果有一个函数 \( T \) 从向量空间 \( V \) 映射到向量空间 \( W \)，对于任意向量 \( \mathbf{u}, \mathbf{v} \in V \) 和任意标量 \( c \)，满足以下两个条件，则 \( T \) 是一个线性变换：</p>
+<ol>
+<li>
+$$
+   T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})
+   $$</li>
+<li>
+$$
+   T(c\mathbf{u}) = cT(\mathbf{u})
+   $$</li>
+</ol>
+<p>线性变换在AI领域中的应用非常广泛，包括图像处理、语音识别、自然语言处理等。例如，在图像处理中，线性变换可以用于图像的旋转、缩放和剪切等操作；在自然语言处理中，线性变换可以用于词向量的转换和文本的特征提取。</p>
+<h2 id="62-线性变换与基向量">6.2 线性变换与基向量
+</h2><p>基向量是定义向量空间的一个关键概念，它们是一组线性无关的向量，可以用来表示空间中的任何向量。在线性变换中，基向量扮演着至关重要的角色，因为线性变换可以看作是基向量在变换下的映射。</p>
+<ul>
+<li>
+<p><strong>基向量的变换</strong>：对于一个给定的线性变换 \( T \)，如果我们知道基向量在 \( T \) 下的像，那么我们就可以确定 \( T \) 对空间中任何向量的作用。这是因为空间中的任何向量都可以表示为基向量的线性组合，而 \( T \) 的线性保证了它对线性组合的作用可以通过对基向量的作用来确定。</p>
+</li>
+<li>
+$$
+  \{\mathbf{v}_1, \mathbf{v}_2, ..., \mathbf{v}_n\}
+  $$$$
+  \{\mathbf{w}_1, \mathbf{w}_2, ..., \mathbf{w}_m\} 
+  $$$$
+  m \times n
+  $$$$
+  \mathbf{v}_i 
+  $$<p>
+在 \( T \) 下的像，以 \( W \) 的基向量表示。</p>
+</li>
+<li>
+<p><strong>维度与秩</strong>：线性变换的秩，即变换后图像的维度，等于变换矩阵的秩。如果变换是非奇异的，那么秩等于基向量的数量，这意味着基向量在变换后仍然覆盖整个空间。如果变换是奇异的，那么秩小于基向量的数量，这意味着基向量在变换后覆盖的空间降维了。</p>
+</li>
+<li>
+<p><strong>行列式与体积变化</strong>：对于非奇异的线性变换，行列式的绝对值表示变换后基向量形成的平行六面体的体积与变换前基向量形成的单位立方体体积的比率。如果行列式的值为零，则变换是奇异的，基向量在变换后形成的体积为零，即所有的基向量映射到了一个低维空间。</p>
+</li>
+<li>
+<p><strong>面积特征</strong>：线性变换对于单位基向量的变换后的图像的面积等于行列式的值的绝对值。</p>
+<ul>
+<li>
+<p>当行列式为负时，线条会颠倒。某种程度上可以把这视为负面积值。</p>
+</li>
+<li>
+$$
+    S = |\det(A)|
+    $$</li>
+</ul>
+<h2 id="63-离散动力系统">6.3 离散动力系统
+</h2><ul>
+<li>
+<p>离散动力系统描述了系统状态在离散时间点上的变化。离散动力系统的状态更新是在一系列特定的时间间隔内进行的，这些时间间隔通常称为时间步长。其函数可表示为：</p>
+</li>
+<li>
+$$
+    x_{t+1} = f(x_t)
+    $$</li>
+<li>
+<p>特征值和特征向量在离散动力系统和连续动力系统中都有应用，它们是数值代数的核心内容。对于一个马尔可夫矩阵。可以通过当前的状态向量与概率矩阵点积得到目标概率。当反复执行过程直到趋向于稳定，就表示得到的是特征向量且特征值为1。</p>
+</li>
+<li>
+<p>一个所有列向量的元素和的值为1且所有元素非负的方阵叫做马尔可夫矩阵。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>通过对线性变换和基向量的深入理解，我们可以更好地把握线性代数在AI领域的应用，从而在算法设计和数据分析中做出更合理的决策。线性变换提供了一种强大的工具，用于分析和处理高维数据，而基向量则为我们提供了一种直观的方式来理解和操作这些变换。</p>
+<h1 id="7张成和基">7.张成和基
+</h1><h2 id="71-张成的概念与基的概念">7.1 张成的概念与基的概念
+</h2><p>​	张成不仅帮助我们理解向量之间的线性关系，还为定义和研究线性空间的结构提供了基础。</p>
+<ul>
+<li>
+<p><strong>张成的概念</strong>：张成是一定的向量能够通过一定数量的重复叠加所能达到的所有位置。具体来说，给定一个向量集合 <em>S</em>=<em>{v1,v2,…,vn}</em>，这个集合的张成（span）就是所有可以表示为这些向量的线性组合的向量的集合。</p>
+</li>
+<li>
+<p><strong>基的概念</strong>：基是一个最小（向量数量）的张成集。只有线性独立的向量才能构成基。基的向量数等同于该空间数的维度。</p>
+<h2 id="72-基的特点">7.2 基的特点
+</h2><ul>
+<li><strong>线性无关性</strong>：只有线性独立的向量才能构成基。线性独立指你无法通过同组的其他向量构成该向量。
+<ul>
+<li>关于线性独立与奇异性的联系：考虑一个 n*×<em>n 的方阵 A</em>，其列向量为 {v1,v2,…,vn}。
+<ul>
+<li>如果 <em>A</em> 的列向量是线性独立的，那么 <em>A</em> 是非奇异的，即 <em>A</em> 有逆矩阵。</li>
+<li>如果 <em>A</em> 的列向量是线性相关的，那么 <em>A</em> 是奇异的，即 <em>A</em> 没有逆矩阵。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>张成性</strong>：基中的向量可以线性组合生成整个向量空间中的任何向量。</li>
+<li><strong>最小性</strong>：基是包含在向量空间中的最小向量集合，它既线性无关又张成整个空间。</li>
+<li><strong>唯一性</strong>：对于给定的向量空间，基不是唯一的，但任何两个基都包含相同数量的向量，这个数量就是空间的维度。</li>
+</ul>
+<h2 id="73-特征基">7.3 特征基
+</h2><ul>
+<li>
+<p>通过特征向量构成的基被称为特征基。对于一个用于线性变换的矩阵，如果存在某一个（组）向量，通过该矩阵线性变换后只是缩放或反转，而非拉伸和扭曲，则称该基为这个矩阵的特征向量。可以用公式这样表示，其中<em><strong>A</strong></em>是一个矩阵，<em><strong>v</strong></em>是一个向量，<em><strong>λ</strong></em>是一个标量：</p>
+</li>
+<li>
+$$
+    Av = \lambda v
+    $$</li>
+<li>
+<p>在以上的定义公式中，<em><strong>λ</strong></em> 被称为特征向量 <em><strong>v</strong></em>的特征值。</p>
+</li>
+<li>
+<p>可以通过计算<strong>标量-向量乘法</strong>来代替<strong>矩阵-向量乘法</strong>，这有效的降低了计算量。</p>
+</li>
+<li>
+<h3 id="特征向量具体的计算过程及原理">特征向量具体的计算过程及原理：
+</h3><ul>
+<li>
+<p>因为特征向量在矩阵上只是缩放，因此变换后与变换前是<u>线性相关</u>的。设存在一个特殊的矩阵，其满足将单位向量放大<em>m</em>倍：</p>
+</li>
+<li>
+$$
+      m = \begin{pmatrix} m & 0 & 0 \\ 0 & m & 0 \\ 0 & 0 & m \end{pmatrix}
+      $$</li>
+<li>
+<p>然后，我们假设这个m在某一条轴上与我们的目标矩阵缩放尺度相同。因为其处处相等，我们可以知道，其差是一个奇异的矩阵。那么便有：</p>
+</li>
+<li>
+$$
+      det(A−λI)=0
+      $$</li>
+<li>
+<p>这个方程被称为特征方程。解特征方程 ，得到特征值 <code>λ1,λ2,…,λn</code>。</p>
+</li>
+<li>
+<p>对于每个特征值 λi，我们需要找到对应的特征向量 vi。特征向量是一个非零的向量，且满足：</p>
+</li>
+<li>
+$$
+      (A−λi*I)vi=0
+      $$</li>
+<li>
+<p>对于每一个特征值vi，我们执行这个解方程操作。这个方程组可能有多个解，但任何非零解都可以作为特征向量。</p>
+</li>
+<li>
+<p>将特征向量归一化，方便使用。当解出来的特征值存在相同项时，<em><strong>不一定</strong></em>有特征基。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="8pca主成分分析">8.<em>PCA</em>（主成分分析）
+</h1><p>​	<strong>PCA（主成分分析，Principal Component Analysis）<strong>是一种统计方法，它通过正交变换将一组可能相关的变量转换为一组线性无关的变量集，称为</strong><u>主成分</u></strong>。PCA 通常用于降维，数据压缩，特征提取，以及在探索性数据分析中寻找数据中的模式。</p>
+<h2 id="81-pca的作用">8.1 PCA的作用
+</h2><ul>
+<li>
+<p><strong>降维</strong>：减少数据的维度，降低计算复杂性，同时保留最重要的信息。</p>
+</li>
+<li>
+<p><strong>去相关</strong>：新的特征（主成分）是<em>线性无关</em>的，这有助于消除原始数据中的多重共线性问题。</p>
+</li>
+<li>
+<p><strong>数据压缩</strong>：通过保留最重要的主成分，可以有效地压缩数据。</p>
+</li>
+<li>
+<p><strong>可视化</strong>：在高维数据集中，PCA 可以帮助将数据投影到二维或三维空间，以便于可视化。</p>
+</li>
+<li>
+<p><strong>噪声过滤</strong>：PCA 可以通过去除数据中的噪声来提高模型的性能。</p>
+</li>
+<li>
+<p><strong>数据预处理</strong>：在许多机器学习算法中，PCA 可以作为数据预处理步骤，以提高算法的效率和准确性。</p>
+<h2 id="82-pca的使用">8.2 PCA的使用
+</h2><ul>
+<li>
+<p>PCA的使用过程可以分为 步。假设我们拥有数据集<em><strong>X</strong></em>，则需按如下步骤进行：</p>
+<ul>
+<li>
+<p>1.<strong>中心化</strong>：将数据集中的每个特征减去其均值，使得新的数据集具有零均值。从视觉上看，这就像是将点移到了坐标轴中间。</p>
+<ul>
+<li>
+<p>假设我们有一个数据集X，其中包含n个样本和m个特征。中心化的过程可以表示为：</p>
+</li>
+<li>
+$$
+        \mu = \begin{pmatrix} \frac{1}{n} \sum_{i=1}^{n} X_{i1}\frac{1}{n} \sum_{i=1}^{n} X_{i2} \\ \vdots \\ \frac{1}{n} \sum_{i=1}^{n} X_{im} \end{pmatrix}
+        $$</li>
+<li>
+$$
+        X_{\text{centered}} = X - \mu
+        $$</li>
+</ul>
+</li>
+<li>
+<p>2.<strong>协方差矩阵</strong>:计算中心化数据的协方差矩阵，以了解特征之间的关系。</p>
+<ul>
+<li>
+<p><strong>协方差</strong>：协方差可以方便的度量数据与数据之间对于彼此的<u>变化趋势</u>。公式表示如下。其中 <em><strong>μ</strong></em> 是<em><strong>X，Y</strong></em>的均值。<em><strong>E</strong></em>是期望值。</p>
+<ul>
+<li>$$
+          Cov(X 
+          i
+          ​
+           ,X 
+          j
+          ​
+           )=E[(X 
+          i
+          ​
+           −μ 
+          i
+          ​
+           )(X 
+          j
+          ​
+           −μ 
+          j
+          ​
+           )]
+          $$</li>
+</ul>
+</li>
+<li>
+<p><strong>方差</strong>：方差可以方便的衡量数据在轴上的密集程度。方差定义为定义为该随机变量与其均值（期望值）之差的平方的期望值。公式表示如下：</p>
+<ul>
+<li>$$
+          Var(X)=E[(X−μ) 
+          2
+           ]
+          $$</li>
+</ul>
+</li>
+<li>
+<p>通过<u>协方差</u>和<u>方差</u>来定义协方差矩阵，定义如下：</p>
+<ul>
+<li>
+$$
+          \text{Cov}(x, y) = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \mu_x)(y_i - \mu_y)
+          $$</li>
+<li>
+$$
+          C = \text{Cov}(X) = \begin{bmatrix}
+          \text{Var}(X_1) & \text{Cov}(X_1, X_2) & \cdots & \text{Cov}(X_1, X_n) \\
+          \text{Cov}(X_2, X_1) & \text{Var}(X_2) & \cdots & \text{Cov}(X_2, X_n) \\
+          \vdots & \vdots & \ddots & \vdots \\
+          \text{Cov}(X_n, X_1) & \text{Cov}(X_n, X_2) & \cdots & \text{Var}(X_n)
+          \end{bmatrix}
+          $$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>3.<strong>特征值分解</strong>：</p>
+<ul>
+<li>在已经计算出协方差矩阵的前提下，找出协方差矩阵的特征值和特征向量（被称为主成分）。因为协方差矩阵的转置不变的特点，所以特征向量必然正交。
+<ul>
+<li>特征值和特征向量计算的过程在前面有涉及。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>4.<strong>选择主成分</strong>：根据特征值的大小选择最重要的特征向量，特征值越大，对应的特征向量越重要。这些特征向量构成了新的特征空间。</p>
+<ul>
+<li>根据我们要的目标空间的维度，选择对应数量的特征向量。优先选择特征值大的特征向量作为投影对象。</li>
+</ul>
+</li>
+<li>
+<p>5.<strong>转换数据</strong>：将数据<strong>投影</strong>到对应的空间上，完成PCA。</p>
+<ul>
+<li>
+<p><strong>投影</strong>的过程如下：</p>
+<ul>
+<li>
+<p>乘以目标空间的张成向量可以投影到目标空间上，而除以目标空间张量的范数可以避免发生延展。</p>
+</li>
+<li>
+$$
+          A_P = A \frac{v}{\|v\|_2}
+          $$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h2 id="83-pca的局限性">8.3 PCA的局限性
+</h2><ul>
+<li><strong>线性假设</strong>：PCA 假设数据的主成分是线性的，对于非线性结构可能不适用。</li>
+<li><strong>对异常值敏感</strong>：PCA 对异常值非常敏感，异常值可能会对主成分产生较大影响。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="9-总结">9. 总结
+</h1><p>线性代数作为数学的一个重要分支，在人工智能（AI）领域的应用至关重要。从基础的矩阵运算到复杂的线性变换，线性代数的概念和工具为AI算法的开发和优化提供了坚实的理论基础和计算框架。</p>
+<h2 id="71-线性代数的核心作用">7.1 线性代数的核心作用
+</h2><p>线性代数的核心作用体现在以下几个方面：</p>
+<ul>
+<li>
+<p><strong>理论基础</strong>：线性代数为AI算法提供了理论支撑，使得算法的实现成为可能。例如，神经网络中的权重更新和反向传播算法依赖于矩阵和向量的运算。</p>
+</li>
+<li>
+<p><strong>数据处理</strong>：在AI中，数据通常以矩阵的形式表示，线性代数提供了处理和分析这些数据的有效工具，如特征提取和降维。</p>
+</li>
+<li>
+<p><strong>模型优化</strong>：线性代数在模型优化中扮演着关键角色，尤其是在优化算法中，如梯度下降法，需要用到微积分和线性代数的知识。</p>
+</li>
+<li>
+<p><strong>算法创新</strong>：许多新的AI算法，如卷积神经网络（CNN）和循环神经网络（RNN），都是基于线性代数的理论创新。</p>
+</li>
+</ul>
+<h2 id="72-线性代数的实际应用">7.2 线性代数的实际应用
+</h2><p>线性代数的实际应用包括但不限于：</p>
+<ul>
+<li>
+<p><strong>图像处理</strong>：在计算机视觉中，线性变换用于图像的旋转、缩放和剪切等操作。</p>
+</li>
+<li>
+<p><strong>自然语言处理</strong>：在线性代数的帮助下，可以实现词向量的转换和文本的特征提取。</p>
+</li>
+<li>
+<p><strong>优化问题</strong>：在线性代数的支持下，可以求解优化问题中的线性方程组，如在支持向量机（SVM）的训练过程中。</p>
+</li>
+<li>
+<p><strong>特征工程</strong>：线性代数提供了特征归一化和相似性度量的工具，这对于特征选择和降维非常重要。</p>
+</li>
+</ul>
+<blockquote>
+<p>[NOTE]</p>
+<p>本篇存在一定AI辅助</p>
+</blockquote>
+<hr>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
+        
+            <a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+            <a href="/tags/ai/">AI</a>
+        
+            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Jan 19, 2025 14:56 CST
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo=""
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 疏间徒泍
+    </section>
+    
+    <section class="powerby">
+        
+            步履不止，朝向远方 <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.db5a2b3b827d2c821ac49f720460967e438699e51c38fe3b4788b311a27bd033.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+  body {
+    background: url(http://localhost:1313/background/background.jpg) no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
+
+<div id="particles-js"></div>
+
+<script src=http://localhost:1313/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "http://localhost:1313/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<script>
+    
+    const cssPath = "http://localhost:1313/waifu/waifu.css"
+    const tipsJsonPath = "http://localhost:1313/waifu/waifu-tips.json"
+    
+    const live2d_path = "https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+
+    
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            }
+            else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+
+    
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(cssPath, "css"),
+            loadExternalResource(live2d_path + "live2d.min.js", "js"),
+            loadExternalResource(live2d_path + "waifu-tips.js", "js")
+        ]).then(() => {
+            
+            initWidget({
+                waifuPath: tipsJsonPath,
+                cdnPath: "https://cdn.jsdelivr.net/gh/SJTDreams/BlogModel@v0.0.1/",
+                tools: ["hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "info", "quit"]
+            });
+            initWaifuMouseEvent();
+        });
+    }
+    function initWaifuMouseEvent() {
+        const waifu = document.getElementById("waifu");
+        let isDown = false;
+        let waifuLeft;
+        let mouseLeft;
+        let waifuTop;
+        let mouseTop;
+        
+        waifu.onmousedown = function (e) {
+            isDown = true;
+            
+            waifuLeft = waifu.offsetLeft;
+            mouseLeft = e.clientX;
+            
+            waifuTop = waifu.offsetTop;
+            mouseTop = e.clientY;
+        }
+        
+        window.onmousemove = function (e) {
+            if (!isDown) {
+                return;
+            }
+            
+            let currentLeft = waifuLeft + (e.clientX - mouseLeft);
+            if (currentLeft < 0) {
+                currentLeft = 0;
+            } else if (currentLeft > window.innerWidth - 300) {
+                currentLeft = window.innerWidth - 300;
+            }
+            waifu.style.left = currentLeft  + "px";
+            
+            let currentTop = waifuTop + (e.clientY - mouseTop);
+            if (currentTop < 30) {
+                currentTop = 30
+            } else if (currentTop > window.innerHeight - 290) {
+                currentTop = window.innerHeight - 290
+            }
+            waifu.style.top = currentTop + "px";
+        }
+        
+        window.onmouseup = function (e) {
+            isDown = false;
+        }
+    }
+</script>
+
+
+<script>
+    function showHideView() {
+        
+        let viewCounts = document.querySelectorAll("#viewCount");
+        if (viewCounts) {
+            
+            let article =  document.querySelector(".article-page");
+            if (!article) {
+                viewCounts.forEach(ele => {
+                    ele.style.display = 'none';
+                });
+            }
+        }
+    }
+    
+    showHideView();
+</script>
+
+<script>
+const staticDir = "http://localhost:1313/"
+const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    lrcType: 3,
+    audio: [
+        {
+            
+            name: '冬之钟OST',
+            artist: '寿司勇者',
+            url: staticDir + '冬之钟.mp3',
+            cover: staticDir + 'blacksouls.jpg',
+            lrc: staticDir + 'lrc.lrc',
+        },
+        {
+             name: '【Remix】背叛的爱丽丝', 
+             artist: 'MYANSR', 
+             url: 'Alice.mp3', 
+             cover: 'blacksouls.jpg', 
+             lrc: 'lrc.lrc', 
+        },
+        {
+             name: 'Are You Lost', 
+             artist: 'park bird', 
+             url: 'Are You Lost.mp3', 
+             cover: 'lost.png', 
+             lrc: 'lrc.lrc', 
+        },
+        {
+             name: 'Be Lost', 
+             artist: '路灰气球z', 
+             url: 'Be Lost.mp3', 
+             cover: 'lost.png', 
+             lrc: 'lrc.lrc', 
+        },
+        {
+             name: 'INTERNET YAMERO', 
+             artist: 'KOTOKO', 
+             url: '升天.mp3', 
+             cover: 'fly.png', 
+             lrc: 'lrc.lrc', 
+        },
+        {
+            
+            name: '古兰战bgm-blacksoulsII',
+            artist: '寿司勇者',
+            url: staticDir + '古兰.mp3',
+            cover: staticDir + 'blacksouls.jpg',
+            lrc: staticDir + 'lrc.lrc',
+        },
+        {
+            
+            name: 'BlackSouls2 OST - 狩猎邪龙的沃柏尔',
+            artist: '寿司勇者',
+            url: staticDir + '邪龙.mp3',
+            cover: staticDir + 'blacksouls.jpg',
+            lrc: staticDir + 'lrc.lrc',
+        },
+        {
+            
+            name: 'BlackSouls2 OST - 地狱王子(安德烈·德·洛德)',
+            artist: '寿司勇者',
+            url: staticDir + '地狱王子.mp3',
+            cover: staticDir + 'blacksouls.jpg',
+            lrc: staticDir + 'lrc.lrc',
+        },
+        {
+            
+            name: 'BlackSouls2 OST - VS虚无少女梅贝尔 (Update Patch ver.)',
+            artist: '寿司勇者',
+            url: staticDir + '梅贝尔.mp3',
+            cover: staticDir + 'blacksouls.jpg',
+            lrc: staticDir + 'lrc.lrc',
+        },
+        {
+            
+            name: '【Future House】- Index',
+            artist: 'Kirara Magic',
+            url: staticDir + 'index.mp3',
+            cover: staticDir + 'piara.jpg',
+            lrc: staticDir + 'lrc.lrc',
+        },
+        {
+            
+            name: '𝕷𝖆𝖘𝖙 𝕯𝖆𝖓𝖈𝖊',
+            artist: 'Xomu',
+            url: staticDir + 'lastdance.mp3',
+            cover: staticDir + 'last dance.jpg',
+            lrc: staticDir + 'lrc.lrc',
+        },
+        {
+            
+            name: '虹の蝶：Summer Pockets Original SoundTrack',
+            artist: 'Key Sounds Label',
+            url: staticDir + 'sp.mp3',
+            cover: staticDir + 'sp.jpg',
+            lrc: staticDir + 'lrc.lrc',
+        }
+        
+    ]
+});
+window.onbeforeunload = () => {
+        
+        const playInfo = {
+            index: ap.list.index,
+            currentTime: ap.audio.currentTime,
+            paused: ap.paused
+        };
+        localStorage.setItem("playInfo", JSON.stringify(playInfo));
+    };
+    
+
+    window.onload = () => {
+        
+        const playInfo = JSON.parse(localStorage.getItem("playInfo"));
+        if (!playInfo) {
+            return;
+        }
+        
+        ap.list.switch(playInfo.index);
+        
+        setTimeout(() => {
+            
+            ap.seek(playInfo.currentTime);
+            
+            if (!playInfo.paused) {
+                ap.play()
+            }
+        }, 500);
+    };
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+<script>
+	var pjax = new Pjax({
+	  selectors: [
+	    ".main-container"
+	  ]
+	})
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            
+            let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+            
+            let bodyClass = newDom.body.className;
+            document.body.setAttribute("class", bodyClass)
+            
+            pjax._handleResponse(responseText, request, href, options);
+        } else {
+            
+        }
+    }
+    document.addEventListener('pjax:complete', () => {
+        
+        window.Stack.init();
+    })
+</script>
+
+
+    </body>
+</html>
