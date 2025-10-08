@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://rpqztclub.github.io/tags/agi/</loc>
+    <lastmod>2025-10-08T04:01:51+00:00</lastmod>
+  </url><url>
     <loc>https://rpqztclub.github.io/tags/ai/</loc>
-    <lastmod>2025-10-08T03:06:03+00:00</lastmod>
+    <lastmod>2025-10-08T04:01:51+00:00</lastmod>
   </url><url>
     <loc>https://rpqztclub.github.io/categories/</loc>
-    <lastmod>2025-10-08T03:06:03+00:00</lastmod>
+    <lastmod>2025-10-08T04:01:51+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -24,10 +27,10 @@
                 />
   </url><url>
     <loc>https://rpqztclub.github.io/post/</loc>
-    <lastmod>2025-10-08T03:06:03+00:00</lastmod>
+    <lastmod>2025-10-08T04:01:51+00:00</lastmod>
   </url><url>
     <loc>https://rpqztclub.github.io/tags/</loc>
-    <lastmod>2025-10-08T03:06:03+00:00</lastmod>
+    <lastmod>2025-10-08T04:01:51+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -44,17 +47,14 @@
                 href="https://rpqztclub.github.io/tags/"
                 />
   </url><url>
-    <loc>https://rpqztclub.github.io/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2025-10-08T03:06:03+00:00</lastmod>
+    <loc>https://rpqztclub.github.io/p/%E5%9F%BA%E4%BA%8Eprompt%E7%9A%84llm%E4%BA%BA%E6%A0%BC%E6%A8%A1%E6%8B%9F%E6%9E%B6%E6%9E%84-%E7%81%B5%E9%AD%82%E7%BB%87%E8%80%85/</loc>
+    <lastmod>2025-10-08T04:01:51+00:00</lastmod>
   </url><url>
-    <loc>https://rpqztclub.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2025-10-08T03:06:03+00:00</lastmod>
+    <loc>https://rpqztclub.github.io/tags/%E6%9E%B6%E6%9E%84/</loc>
+    <lastmod>2025-10-08T04:01:51+00:00</lastmod>
   </url><url>
-    <loc>https://rpqztclub.github.io/tags/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2025-10-08T03:06:03+00:00</lastmod>
-  </url><url>
-    <loc>https://rpqztclub.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
-    <lastmod>2025-10-08T03:06:03+00:00</lastmod>
+    <loc>https://rpqztclub.github.io/tags/%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2025-10-08T04:01:51+00:00</lastmod>
   </url><url>
     <loc>https://rpqztclub.github.io/page/</loc>
     <lastmod>2025-10-08T11:05:48+08:00</lastmod>
@@ -83,16 +83,13 @@
                 href="https://rpqztclub.github.io/"
                 />
   </url><url>
-    <loc>https://rpqztclub.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2025-10-08T03:06:03+00:00</lastmod>
-  </url><url>
-    <loc>https://rpqztclub.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2025-10-08T03:06:03+00:00</lastmod>
-  </url><url>
     <loc>https://rpqztclub.github.io/search/</loc>
     <lastmod>2025-10-04T11:32:57+08:00</lastmod>
   </url><url>
     <loc>https://rpqztclub.github.io/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5/</loc>
     <lastmod>2025-10-04T11:32:57+08:00</lastmod>
+  </url><url>
+    <loc>https://rpqztclub.github.io/categories/%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2025-10-08T04:01:51+00:00</lastmod>
   </url>
 </urlset>

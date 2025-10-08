@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>AI on 量子科技社</title>
-        <link>https://rpqztclub.github.io/tags/ai/</link>
-        <description>Recent content in AI on 量子科技社</description>
+        <title>设计 on 量子科技社</title>
+        <link>https://rpqztclub.github.io/tags/%E8%AE%BE%E8%AE%A1/</link>
+        <description>Recent content in 设计 on 量子科技社</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>疏间徒泍</copyright>
-        <lastBuildDate>Wed, 08 Oct 2025 04:01:51 +0000</lastBuildDate><atom:link href="https://rpqztclub.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 08 Oct 2025 04:01:51 +0000</lastBuildDate><atom:link href="https://rpqztclub.github.io/tags/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>基于Prompt的LLM人格模拟架构 - 灵魂织者</title>
         <link>https://rpqztclub.github.io/p/%E5%9F%BA%E4%BA%8Eprompt%E7%9A%84llm%E4%BA%BA%E6%A0%BC%E6%A8%A1%E6%8B%9F%E6%9E%B6%E6%9E%84-%E7%81%B5%E9%AD%82%E7%BB%87%E8%80%85/</link>
         <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
