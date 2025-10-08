@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>量子科技社</title>
-        <link>http://localhost:1313/</link>
+        <link>https://rpqztclub.github.io/</link>
         <description>Recent content on 量子科技社</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>疏间徒泍</copyright><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>疏间徒泍</copyright><atom:link href="https://rpqztclub.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>机器学习线性代数学习笔记</title>
-        <link>http://localhost:1313/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <link>https://rpqztclub.github.io/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/title.png" alt="Featured image of post 机器学习线性代数学习笔记" /&gt;&lt;h1 id=&#34;机器学习-线性代数学习笔记&#34;&gt;机器学习 线性代数学习笔记
+        <guid>https://rpqztclub.github.io/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;img src="https://rpqztclub.github.io/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/title.png" alt="Featured image of post 机器学习线性代数学习笔记" /&gt;&lt;h1 id=&#34;机器学习-线性代数学习笔记&#34;&gt;机器学习 线性代数学习笔记
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;本篇是在学习过程中写的，可能会存在疏漏，欢迎补充！&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -563,18 +563,18 @@ $$
         </item>
         <item>
         <title>归档</title>
-        <link>http://localhost:1313/archives/</link>
+        <link>https://rpqztclub.github.io/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/archives/</guid>
+        <guid>https://rpqztclub.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>关于作者</title>
-        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85/</link>
+        <link>https://rpqztclub.github.io/%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85/</link>
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85/</guid>
+        <guid>https://rpqztclub.github.io/%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85/</guid>
         <description>&lt;p&gt;一个普通的学生。&lt;/p&gt;
 &lt;p&gt;兴趣爱好广泛。包括游戏、番、写文、辩论、编程、学AI、看一些很酷的科普视频等。&lt;/p&gt;
 &lt;p&gt;游戏方面上喜好独立游戏、gal、二游、rougelike、类银河恶魔城、沙盒、rpg、音游等多方面的游戏。自认为算是个二次元。&lt;/p&gt;
@@ -585,18 +585,18 @@ $$
         </item>
         <item>
         <title>搜索</title>
-        <link>http://localhost:1313/search/</link>
+        <link>https://rpqztclub.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
+        <guid>https://rpqztclub.github.io/search/</guid>
         <description></description>
         </item>
         <item>
         <title>相关链接</title>
-        <link>http://localhost:1313/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5/</link>
+        <link>https://rpqztclub.github.io/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5/</guid>
+        <guid>https://rpqztclub.github.io/%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5/</guid>
         <description>&lt;p&gt;以下列出一些常用的网站，方便使用。&lt;/p&gt;
 </description>
         </item>

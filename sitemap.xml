@@ -2,19 +2,19 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>http://localhost:1313/zh-cn/sitemap.xml</loc>
+    <loc>https://rpqztclub.github.io/zh-cn/sitemap.xml</loc>
     
-      <lastmod>2025-10-04T11:32:57+08:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>http://localhost:1313/en/sitemap.xml</loc>
+      <lastmod>2025-10-08T02:37:57+00:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/ar/sitemap.xml</loc>
+    <loc>https://rpqztclub.github.io/en/sitemap.xml</loc>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://rpqztclub.github.io/ar/sitemap.xml</loc>
     
   </sitemap>
   
